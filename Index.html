@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Future Trading</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .btn { padding: 10px 20px; margin: 10px; cursor: pointer; }
+        .buy { background: green; color: white; }
+        .sell { background: red; color: white; }
+        .chart { background: blue; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Crypto Future Trading</h1>
+    
+    <h2>Select Crypto</h2>
+    <select id="crypto">
+        <option value="BTC">Bitcoin (BTC)</option>
+        <option value="ETH">Ethereum (ETH)</option>
+        <option value="USDT">Tether (USDT)</option>
+    </select>
+
+    <h2>Trading Actions</h2>
+    <button class="btn buy" onclick="trade('buy')">Buy</button>
+    <button class="btn sell" onclick="trade('sell')">Sell</button>
+    <button class="btn chart" onclick="openChart()">View Chart</button>
+
+    <script>
+        function trade(action) {
+            let crypto = document.getElementById("crypto").value;
+            alert(`${action.toUpperCase()} order placed for ${crypto}`);
+        }
+
+        function openChart() {
+            let crypto = document.getElementById("crypto").value;
+            window.open(`https://www.tradingview.com/chart/?symbol=${crypto}USDT`, "_blank");
+        }
+    </script>
+</body>
+</html>
